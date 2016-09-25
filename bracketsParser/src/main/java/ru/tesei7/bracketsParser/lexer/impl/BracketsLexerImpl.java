@@ -1,14 +1,10 @@
 package ru.tesei7.bracketsParser.lexer.impl;
 
+import ru.tesei7.bracketsParser.lexer.*;
+
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
-
-import ru.tesei7.bracketsParser.lexer.BracketDirection;
-import ru.tesei7.bracketsParser.lexer.BracketTokenType;
-import ru.tesei7.bracketsParser.lexer.BracketsLexer;
-import ru.tesei7.bracketsParser.lexer.BracketsLexerException;
-import ru.tesei7.bracketsParser.lexer.Token;
 
 public class BracketsLexerImpl implements BracketsLexer {
 

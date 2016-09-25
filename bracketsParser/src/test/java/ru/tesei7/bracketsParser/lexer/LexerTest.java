@@ -1,6 +1,12 @@
 package ru.tesei7.bracketsParser.lexer;
 
-import static junit.framework.Assert.assertEquals;
+import org.apache.commons.io.FileUtils;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TestName;
+import ru.tesei7.bracketsParser.lexer.impl.BracketTokenTypeBase;
+import ru.tesei7.bracketsParser.lexer.impl.BracketsLexerImpl;
+import ru.tesei7.bracketsParser.parser.impl.BracketsParser;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,14 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TestName;
-
-import ru.tesei7.bracketsParser.lexer.impl.BracketTokenTypeBase;
-import ru.tesei7.bracketsParser.lexer.impl.BracketsLexerImpl;
-import ru.tesei7.bracketsParser.parser.BracketsParser;
+import static junit.framework.Assert.assertEquals;
 
 public class LexerTest {
     @Rule

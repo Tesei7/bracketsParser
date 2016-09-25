@@ -41,4 +41,9 @@ public class BracketTokenTypeBase implements BracketTokenType {
 	public String getDescription() {
 		return description;
 	}
+
+    @Override
+    public String toString() {
+        return description;
+    }
 }
