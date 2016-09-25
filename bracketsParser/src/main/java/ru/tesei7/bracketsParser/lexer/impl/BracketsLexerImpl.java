@@ -12,8 +12,8 @@ import ru.tesei7.bracketsParser.lexer.Token;
 
 public class BracketsLexerImpl implements BracketsLexer {
 
-	private int index;
-	private Collection<BracketTokenType> types;
+    private Collection<BracketTokenType> types;
+    private int index;
 
 	public BracketsLexerImpl(Collection<BracketTokenType> types) {
 		this.types = types;
@@ -27,8 +27,8 @@ public class BracketsLexerImpl implements BracketsLexer {
 		index = 0;
 		int length = content.length();
 		do {
-			BracketDirection direction = null;
-			BracketTokenType type = null;
+            BracketDirection direction = null;
+            BracketTokenType type = null;
 			int nearestIndex = Integer.MAX_VALUE;
 			for (BracketTokenType t : types) {
 				String bracket = t.getBracket(BracketDirection.LEFT);
@@ -36,17 +36,18 @@ public class BracketsLexerImpl implements BracketsLexer {
 				if (indexOf != -1 && indexOf < nearestIndex) {
 					type = t;
 					direction = BracketDirection.LEFT;
-					index = indexOf;
+					nearestIndex = indexOf;
 				}
 				bracket = t.getBracket(BracketDirection.RIGHT);
 				indexOf = content.indexOf(bracket, index);
 				if (indexOf != -1 && indexOf < nearestIndex) {
 					type = t;
 					direction = BracketDirection.RIGHT;
-					index = indexOf;
+					nearestIndex = indexOf;
 				}
 			}
-			if (direction != null && type != null) {
+            index = nearestIndex;
+			if (direction != null) {
 				addTextTokenIfNeeded(content, tokens);
 				BracketTokenImpl token = new BracketTokenImpl(index, type, direction);
 				tokens.add(token);

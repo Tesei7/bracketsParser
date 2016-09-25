@@ -12,7 +12,7 @@ import ru.tesei7.bracketsParser.lexer.impl.BracketTokenTypes;
 import ru.tesei7.bracketsParser.lexer.impl.BracketsLexerImpl;
 
 public class BracketsParser {
-	private static final BracketTokenType[] DEFAULT_TYPES = { BracketTokenTypes.PARENTHESIS,
+	public static final BracketTokenType[] DEFAULT_TYPES = { BracketTokenTypes.PARENTHESIS,
 			BracketTokenTypes.SQUARE_BRACKET, BracketTokenTypes.BRACE };
 
 	private final Collection<BracketTokenType> types;
